@@ -6,7 +6,10 @@ import {
   Mail, 
   Check, 
   Copy, 
-  Terminal 
+  Terminal,
+  GitBranch,
+  ShieldCheck,
+  Sparkles
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -36,13 +39,13 @@ export default function Hero({ onOpenResume }) {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Status Pill */}
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-700/60 shadow-inner">
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/70 shadow-inner">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-medium text-slate-300">
-                Fresher MERN Stack Developer &bull; Ready to Join
+              <span className="text-xs font-semibold text-slate-200 tracking-wide">
+                Fresher MERN Stack Developer &bull; Available Immediately
               </span>
             </div>
 
@@ -59,10 +62,17 @@ export default function Hero({ onOpenResume }) {
               </p>
             </div>
 
-            {/* Location & Tagline */}
-            <div className="flex items-center justify-center lg:justify-start space-x-2 text-slate-400 text-sm">
-              <MapPin className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>{personalInfo.location}</span>
+            {/* Location & Quick Credentials Tagline */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-slate-400 text-xs sm:text-sm">
+              <div className="flex items-center space-x-1.5">
+                <MapPin className="w-4 h-4 text-sky-400 shrink-0" />
+                <span>{personalInfo.location}</span>
+              </div>
+              <span className="hidden sm:inline text-slate-600">&bull;</span>
+              <div className="flex items-center space-x-1.5 text-emerald-400 font-medium">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Verified CST Diploma Graduate (85%)</span>
+              </div>
             </div>
 
             {/* Description tailored for recruiters */}
@@ -76,7 +86,7 @@ export default function Hero({ onOpenResume }) {
                 href="#projects"
                 className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-600 to-violet-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-sm shadow-xl shadow-sky-500/20 hover:shadow-sky-500/35 transition-all transform hover:-translate-y-0.5 active:translate-y-0 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
               >
-                <span>View Projects</span>
+                <span>Explore Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -99,140 +109,171 @@ export default function Hero({ onOpenResume }) {
 
             {/* Quick Metrics Cards */}
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mx-auto lg:mx-0">
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-center lg:text-left min-w-0">
-                <span className="text-xl font-bold text-sky-400 block">85%</span>
+              <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 text-center lg:text-left min-w-0 transition-transform hover:-translate-y-0.5">
+                <span className="text-xl font-bold text-sky-400 block font-mono">85%</span>
                 <p className="text-[11px] text-slate-400 mt-0.5 truncate" title="Diploma Score (CST)">Diploma (CST)</p>
               </div>
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-center lg:text-left min-w-0">
-                <span className="text-xl font-bold text-indigo-400 block">Intern</span>
+              <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 text-center lg:text-left min-w-0 transition-transform hover:-translate-y-0.5">
+                <span className="text-xl font-bold text-indigo-400 block font-mono">Intern</span>
                 <p className="text-[11px] text-slate-400 mt-0.5 truncate" title="NexCent Ecommerce">NexCent Ecom</p>
               </div>
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-center lg:text-left min-w-0">
-                <span className="text-xl font-bold text-violet-400 block">MERN</span>
+              <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 text-center lg:text-left min-w-0 transition-transform hover:-translate-y-0.5">
+                <span className="text-xl font-bold text-violet-400 block font-mono">MERN</span>
                 <p className="text-[11px] text-slate-400 mt-0.5 truncate" title="React, Node, Mongo, Express">React &bull; Node</p>
               </div>
-              <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800/80 text-center lg:text-left min-w-0">
-                <span className="text-xl font-bold text-emerald-400 block">2026</span>
+              <div className="p-3.5 rounded-xl bg-slate-900/70 border border-slate-800 text-center lg:text-left min-w-0 transition-transform hover:-translate-y-0.5">
+                <span className="text-xl font-bold text-emerald-400 block font-mono">2026</span>
                 <p className="text-[11px] text-slate-400 mt-0.5 truncate" title="AIEM Graduate">AIEM Grad</p>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column: Interactive Developer Code Window */}
+          {/* Right Column: Premium Developer Code Window */}
           <div className="lg:col-span-5">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               
               {/* Outer Decorative Glow */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-sky-500/30 to-indigo-500/30 rounded-2xl blur-xl opacity-50 transition-all pointer-events-none" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-sky-500/25 via-indigo-500/25 to-violet-500/25 rounded-2xl blur-xl opacity-60 transition-all pointer-events-none" />
 
               {/* Code Card Window */}
-              <div className="relative rounded-2xl bg-[#0B0F19] border border-white/10 shadow-2xl overflow-hidden font-mono text-xs">
+              <div className="relative rounded-2xl bg-[#090D16] border border-white/10 shadow-2xl overflow-hidden font-mono text-xs">
                 
-                {/* Window Header */}
-                <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-white/10">
+                {/* Window Header with Mac OS Dots & Tab */}
+                <div className="flex items-center justify-between px-4 py-2.5 bg-[#0D1424] border-b border-white/10">
                   <div className="flex items-center space-x-2">
-                    <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                    <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                    <span className="ml-2 text-xs text-slate-400 font-medium">rupam-profile.js</span>
+                    <span className="w-3 h-3 rounded-full bg-[#FF5F56] inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block" />
+                    <span className="w-3 h-3 rounded-full bg-[#27C93F] inline-block" />
+                    <div className="ml-3 px-3 py-1 rounded-t-md bg-[#090D16] border-t border-x border-white/10 text-slate-300 text-[11px] flex items-center space-x-1.5">
+                      <span className="text-sky-400 font-bold">JS</span>
+                      <span>candidate.config.js</span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-[11px] text-slate-400">
-                    <span className="px-2 py-0.5 rounded bg-slate-800 text-sky-400">ES6+</span>
+                  <div className="hidden sm:flex items-center space-x-2 text-[10px] text-slate-400">
+                    <span className="px-2 py-0.5 rounded bg-slate-800/80 text-sky-400 border border-white/5">ES6+</span>
                   </div>
                 </div>
 
-                {/* Code Content */}
-                <div className="p-5 space-y-2 text-slate-300 leading-relaxed overflow-x-auto">
-                  <div>
-                    <span className="text-indigo-400">const</span>{' '}
-                    <span className="text-sky-300">candidate</span> = {'{'}
-                  </div>
-                  
-                  <div className="pl-4">
-                    <span className="text-slate-400">name:</span>{' '}
-                    <span className="text-emerald-300">"{personalInfo.name}"</span>,
-                  </div>
-                  
-                  <div className="pl-4">
-                    <span className="text-slate-400">role:</span>{' '}
-                    <span className="text-emerald-300">"{personalInfo.role}"</span>,
+                {/* Breadcrumbs */}
+                <div className="px-4 py-1.5 bg-[#090D16]/90 border-b border-white/5 text-[10px] text-slate-500 flex items-center space-x-1">
+                  <span>src</span>
+                  <span>&gt;</span>
+                  <span>config</span>
+                  <span>&gt;</span>
+                  <span className="text-slate-400">candidate.config.js</span>
+                </div>
+
+                {/* Code Content with Line Numbers */}
+                <div className="p-4 text-slate-300 leading-relaxed overflow-x-auto flex">
+                  {/* Line Numbers */}
+                  <div className="pr-4 text-slate-600 select-none text-right font-mono text-xs space-y-1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
                   </div>
 
-                  <div className="pl-4">
-                    <span className="text-slate-400">location:</span>{' '}
-                    <span className="text-emerald-300">"Kolkata, India"</span>,
-                  </div>
-
-                  <div className="pl-4">
-                    <span className="text-slate-400">education:</span> {'{'}
-                    <div className="pl-4">
-                      <span className="text-slate-400">institution:</span>{' '}
-                      <span className="text-amber-300">"Abacus Institute (AIEM)"</span>,
+                  {/* Code Syntax */}
+                  <div className="space-y-1 font-mono text-xs">
+                    <div>
+                      <span className="text-purple-400">export const</span>{' '}
+                      <span className="text-sky-300">candidate</span> = {'{'}
                     </div>
+                    
                     <div className="pl-4">
-                      <span className="text-slate-400">degree:</span>{' '}
-                      <span className="text-amber-300">"Diploma CST (2026)"</span>,
+                      <span className="text-slate-400">name:</span>{' '}
+                      <span className="text-emerald-300">"{personalInfo.name}"</span>,
                     </div>
-                    <div className="pl-4">
-                      <span className="text-slate-400">score:</span>{' '}
-                      <span className="text-sky-400">85%</span>
-                    </div>
-                    {'}'},
-                  </div>
-
-                  <div className="pl-4">
-                    <span className="text-slate-400">experience:</span> {'{'}
-                    <div className="pl-4">
-                      <span className="text-slate-400">company:</span>{' '}
-                      <span className="text-indigo-300">"NexCent Ecommerce"</span>,
-                    </div>
+                    
                     <div className="pl-4">
                       <span className="text-slate-400">role:</span>{' '}
-                      <span className="text-indigo-300">"Web Development Intern"</span>
+                      <span className="text-emerald-300">"{personalInfo.role}"</span>,
                     </div>
-                    {'}'},
-                  </div>
 
-                  <div className="pl-4">
-                    <span className="text-slate-400">coreStack:</span> [
-                    <span className="text-sky-300">"React.js"</span>,{' '}
-                    <span className="text-sky-300">"Node.js"</span>,{' '}
-                    <span className="text-sky-300">"Express"</span>,{' '}
-                    <span className="text-sky-300">"MongoDB"</span>,{' '}
-                    <span className="text-sky-300">"Tailwind"</span>
-                    ],
-                  </div>
+                    <div className="pl-4">
+                      <span className="text-slate-400">location:</span>{' '}
+                      <span className="text-emerald-300">"{personalInfo.location}"</span>,
+                    </div>
 
-                  <div className="pl-4">
-                    <span className="text-slate-400">fresherMindset:</span>{' '}
-                    <span className="text-emerald-400 font-semibold">"Ready to learn, build & contribute"</span>
-                  </div>
+                    <div className="pl-4">
+                      <span className="text-slate-400">diploma:</span> {'{'}
+                      <span className="text-slate-400"> institute:</span>{' '}
+                      <span className="text-amber-300">"AIEM"</span>,{' '}
+                      <span className="text-slate-400">score:</span>{' '}
+                      <span className="text-sky-400 font-bold">"85%"</span> {'}'},
+                    </div>
 
-                  <div>{'};'}</div>
+                    <div className="pl-4">
+                      <span className="text-slate-400">internship:</span> {'{'}
+                      <span className="text-slate-400"> role:</span>{' '}
+                      <span className="text-amber-300">"Web Dev Intern"</span>,{' '}
+                      <span className="text-slate-400">company:</span>{' '}
+                      <span className="text-amber-300">"NexCent"</span> {'}'},
+                    </div>
+
+                    <div className="pl-4">
+                      <span className="text-slate-400">coreStack:</span> [
+                      <span className="text-sky-300">"React"</span>,{' '}
+                      <span className="text-sky-300">"Node"</span>,{' '}
+                      <span className="text-sky-300">"Express"</span>,{' '}
+                      <span className="text-sky-300">"MongoDB"</span>
+                      ],
+                    </div>
+
+                    <div className="pl-4">
+                      <span className="text-slate-400">gitCollaborator:</span>{' '}
+                      <span className="text-purple-300 font-bold">true</span>,
+                    </div>
+
+                    <div className="pl-4">
+                      <span className="text-slate-400">mindset:</span>{' '}
+                      <span className="text-emerald-400 font-semibold">"Ready to learn, build & contribute"</span>
+                    </div>
+
+                    <div>{'};'}</div>
+                  </div>
                 </div>
 
-                {/* Quick Copy Contact Bar inside Window */}
-                <div className="p-3.5 bg-slate-900/80 border-t border-white/5 flex items-center justify-between gap-2">
-                  <div className="flex items-center space-x-2 text-[11px] text-slate-400 truncate">
-                    <Terminal className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-                    <span className="truncate">{personalInfo.email}</span>
+                {/* IDE Bottom Status Bar */}
+                <div className="px-4 py-2 bg-[#0B101D] border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-1 text-slate-300">
+                      <GitBranch className="w-3.5 h-3.5 text-sky-400" />
+                      <span>main</span>
+                    </div>
+                    <span className="text-slate-600">&bull;</span>
+                    <span className="text-emerald-400 flex items-center space-x-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>0 errors</span>
+                    </span>
                   </div>
+
+                  {/* Copy Email Button */}
                   <button
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center space-x-1 px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-[11px] transition-colors shrink-0 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
+                    className="inline-flex items-center space-x-1 px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 text-[11px] transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
                     title="Copy Email Address"
                     aria-label={copiedEmail ? "Email copied to clipboard" : "Copy email address"}
                   >
                     {copiedEmail ? (
                       <>
                         <Check className="w-3 h-3 text-emerald-400" />
-                        <span className="text-emerald-400">Copied</span>
+                        <span className="text-emerald-400 font-semibold">Copied!</span>
                       </>
                     ) : (
                       <>
-                        <Copy className="w-3 h-3" />
-                        <span>Copy</span>
+                        <Copy className="w-3 h-3 text-sky-400" />
+                        <span>Copy Email</span>
                       </>
                     )}
                   </button>

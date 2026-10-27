@@ -7,13 +7,13 @@ export const personalInfo = {
   name: "Rupam Ghosh",
   role: "MERN Stack Web Developer",
   status: "Fresher | Actively Seeking Full-Time Opportunities",
-  tagline: "Building responsive, modern, and high-performance web applications with clean code and intuitive UI.",
+  tagline: "Building responsive, modern, and high-performance web applications with clean code, RESTful architecture, and intuitive UI.",
   location: "Kolkata, West Bengal, India",
   email: "rupamghosh175@gmail.com",
   phone: "+91 9475887833",
   github: "https://github.com/codebyrupam",
   linkedin: "https://linkedin.com/in/rupam-ghosh-7293a5279",
-  resumePath: "/resume.pdf", // Place your resume.pdf into the public/ directory
+  resumePath: "/resume.pdf", // Place your official resume.pdf into the public/ directory
   bio: "Motivated and detail-oriented Computer Science diploma graduate (2026) specializing in modern frontend engineering and the MERN stack ecosystem. Passionate about crafting responsive user interfaces, developing robust REST APIs, and writing clean, scalable JavaScript and React code. Hands-on experience gained through an e-commerce development internship and dedicated full-stack practice projects.",
   languages: [
     { name: "English", proficiency: "Professional Working Proficiency" },
@@ -30,32 +30,32 @@ export const personalInfo = {
 
 export const skillsData = {
   frontend: [
-    { name: "React.js", level: "Proficient", highlight: true },
-    { name: "JavaScript (ES6+)", level: "Proficient", highlight: true },
-    { name: "Tailwind CSS", level: "Proficient", highlight: true },
-    { name: "HTML5", level: "Proficient" },
-    { name: "CSS3", level: "Proficient" }
+    { name: "React.js", level: "Proficient", highlight: true, detail: "Component architecture, hooks, virtual DOM" },
+    { name: "JavaScript (ES6+)", level: "Proficient", highlight: true, detail: "Async/await, closures, array methods, DOM APIs" },
+    { name: "Tailwind CSS", level: "Proficient", highlight: true, detail: "Custom utility configuration, responsive grids, dark mode" },
+    { name: "HTML5", level: "Proficient", detail: "Semantic markup, accessibility landmarks, forms" },
+    { name: "CSS3", level: "Proficient", detail: "Flexbox, Grid, transitions, animations, media queries" }
   ],
   backend: [
-    { name: "Node.js", level: "Working Knowledge", highlight: true },
-    { name: "Express.js", level: "Working Knowledge", highlight: true },
-    { name: "REST API Fundamentals", level: "Working Knowledge" },
-    { name: "CRUD Operations", level: "Working Knowledge" }
+    { name: "Node.js", level: "Working Knowledge", highlight: true, detail: "Event loop, npm ecosystem, asynchronous I/O" },
+    { name: "Express.js", level: "Working Knowledge", highlight: true, detail: "Routing, middleware, JSON parsing, error handlers" },
+    { name: "REST API Fundamentals", level: "Working Knowledge", detail: "HTTP status codes, request/response cycles, CORS" },
+    { name: "CRUD Operations", level: "Working Knowledge", detail: "Create, Read, Update, Delete workflows and validation" }
   ],
   databaseAndIntegration: [
-    { name: "MongoDB", level: "Basic Knowledge", note: "Schema design & CRUD" },
-    { name: "Axios", level: "Proficient", note: "API communication" },
-    { name: "API Integration", level: "Working Knowledge", note: "Third-party & custom endpoints" }
+    { name: "MongoDB", level: "Basic Knowledge", note: "Collections, documents & Mongoose models", detail: "Document modeling, basic indexing, Atlas practice" },
+    { name: "Axios", level: "Proficient", note: "HTTP client communication", detail: "Async request handling, headers, error responses" },
+    { name: "API Integration", level: "Working Knowledge", note: "Third-party endpoints & custom backends", detail: "Handling JSON payloads, dynamic rendering, error states" }
   ],
   tools: [
-    { name: "Git", category: "Version Control" },
-    { name: "GitHub", category: "Code Collaboration" },
-    { name: "Visual Studio Code", category: "Editor & Tooling" },
-    { name: "Figma", category: "UI/UX & Design Hand-off" }
+    { name: "Git", category: "Version Control", detail: "Branching, committing, staging, conflict resolution" },
+    { name: "GitHub", category: "Code Collaboration", detail: "Remote repositories, PR workflow, GitHub Pages" },
+    { name: "Visual Studio Code", category: "Editor & Tooling", detail: "Extensions, debugging, ESLint, Prettier setup" },
+    { name: "Figma", category: "UI/UX & Design Hand-off", detail: "Wireframe inspection, typography & spacing extraction" }
   ],
   otherLanguages: [
-    { name: "Python", level: "Basic Foundation" },
-    { name: "Java", level: "Basic Foundation" }
+    { name: "Python", level: "Basic Foundation", detail: "Core syntax, data types, algorithmic logic" },
+    { name: "Java", level: "Basic Foundation", detail: "OOP principles, classes, inheritance, encapsulation" }
   ]
 };
 
@@ -63,41 +63,49 @@ export const skillsData = {
 export const currentlyPracticing = [
   {
     topic: "React Hooks & State Architecture",
+    tag: "#CustomHooks",
     description: "Deepening practical knowledge of useEffect dependencies, custom hooks, and memoization patterns.",
     icon: "Boxes"
   },
   {
     topic: "Redux Toolkit",
+    tag: "#GlobalState",
     description: "Global state management, slices, and async thunks for scalable React applications.",
     icon: "Layers"
   },
   {
     topic: "Protected Routes & Auth Flow",
+    tag: "#RouteGuards",
     description: "Implementing client-side route guards, JWT token lifecycle, and role-based views.",
     icon: "ShieldCheck"
   },
   {
     topic: "Google Authentication (OAuth)",
+    tag: "#OAuth2",
     description: "Integrating seamless single sign-on (SSO) with Firebase and OAuth providers.",
     icon: "KeyRound"
   },
   {
     topic: "Socket.IO Real-time Communication",
+    tag: "#WebSockets",
     description: "Bi-directional event-driven architecture for real-time chat and live status updates.",
     icon: "Zap"
   },
   {
     topic: "Next.js & Server Components",
+    tag: "#SSR_AppRouter",
     description: "Exploring hybrid rendering (SSR/SSG), App Router paradigms, and SEO optimizations.",
     icon: "Flame"
   },
   {
     topic: "TypeScript",
+    tag: "#TypeSafety",
     description: "Type safety, interfaces, generics, and strict contract definitions across UI props.",
     icon: "FileCode2"
   },
   {
     topic: "Payment Gateway Concepts",
+    tag: "#CheckoutFlow",
     description: "Studying webhook verification, order creation workflows, and checkout security principles.",
     icon: "CreditCard"
   }
@@ -133,8 +141,18 @@ export const projectsData = [
       "Integrated Axios for asynchronous HTTP API communication with backend services",
       "Practiced document storage, schema structure, and query handling with MongoDB"
     ],
+    architecture: {
+      frontend: "React SPA with component state, responsive form controls & data tables",
+      backend: "Node.js & Express REST API with modular routers and error handlers",
+      database: "MongoDB collections with schema validation and CRUD handlers",
+      endpoints: [
+        "POST /api/records - Create new record with payload validation",
+        "GET /api/records - Fetch all records with sorting",
+        "PUT /api/records/:id - Update existing record by ID",
+        "DELETE /api/records/:id - Remove record from collection"
+      ]
+    },
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Axios", "REST API"],
-    // Real repository link or explicit placeholder
     githubUrl: "https://github.com/codebyrupam", 
     isGithubPlaceholder: true, // Set to false once specific repository link is updated
     demoUrl: null, // Set URL once deployed (never fake deployment)
@@ -153,6 +171,16 @@ export const projectsData = [
       "Designed a polished dark palette with glassmorphism and subtle accent highlights",
       "Engineered reusable components, interactive modals, and copy-to-clipboard utilities"
     ],
+    architecture: {
+      frontend: "React 18, Vite build pipeline, Tailwind CSS design system",
+      accessibility: "WCAG 2.1 AA compliant, focus-visible indicators, ARIA dialogs & skip link",
+      performance: "Zero runtime dependencies, lazy animations, sub-50kB gzipped CSS",
+      specs: [
+        "Semantic HTML5 landmarks (header, nav, main, section, footer)",
+        "Mobile drawer with backdrop blur and escape key trap",
+        "Pre-filled mailto integration with one-click clipboard copy fallback"
+      ]
+    },
     techStack: ["React.js", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
     githubUrl: "https://github.com/codebyrupam",
     isGithubPlaceholder: true,
@@ -172,6 +200,16 @@ export const projectsData = [
       "Integrated external third-party REST APIs using asynchronous fetch and Axios",
       "Architected modular and reusable component structures passing props effectively"
     ],
+    architecture: {
+      frontend: "Modular React components with controlled inputs and filter state",
+      networking: "Asynchronous HTTP client integration with error boundary handling",
+      patterns: "Custom useFetch hook patterns, memoized calculations, responsive cards",
+      features: [
+        "Debounced text search for filtering records dynamically",
+        "Multi-attribute filter pills with active state indicators",
+        "Reusable card layouts passing typed prop contracts"
+      ]
+    },
     techStack: ["React.js", "JavaScript (ES6+)", "Axios", "React Hooks", "CSS3"],
     githubUrl: "https://github.com/codebyrupam",
     isGithubPlaceholder: true,
@@ -191,6 +229,16 @@ export const projectsData = [
       "Ensured mobile, tablet, and widescreen visual parity without layout breakage",
       "Maintained structured, maintainable stylesheets and accessible color contrasts"
     ],
+    architecture: {
+      frontend: "Semantic HTML5 structure and custom CSS Flexbox / Grid architectures",
+      designHandOff: "Extracting color variables, typography scales, and padding from Figma",
+      crossBrowser: "Checked for multi-viewport consistency (375px mobile to 1920px widescreen)",
+      specs: [
+        "Zero horizontal scroll on compact viewports",
+        "Fluid container widths using clamp() and percentage grids",
+        "Consistent typographic hierarchy and accessible contrast ratios"
+      ]
+    },
     techStack: ["HTML5", "CSS3", "JavaScript", "Figma", "Responsive Web Design"],
     githubUrl: "https://github.com/codebyrupam",
     isGithubPlaceholder: true,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-  Sparkles, 
   Boxes, 
   Layers, 
   ShieldCheck, 
@@ -9,7 +8,8 @@ import {
   Flame, 
   FileCode2, 
   CreditCard,
-  Compass
+  Compass,
+  Sparkles
 } from 'lucide-react';
 import { currentlyPracticing } from '../data/portfolioData';
 
@@ -54,18 +54,19 @@ export default function CurrentlyPracticing() {
             return (
               <div 
                 key={item.topic}
-                className="group relative rounded-2xl bg-[#0E1524] p-5 border border-white/5 hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/10 flex flex-col justify-between"
+                className="group relative rounded-2xl bg-[#0E1524] p-5 border border-white/5 hover:border-violet-500/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/10 flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Bar with Icon & Status Tag */}
+                  {/* Top Bar with Icon & Tag */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="p-2.5 rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400 group-hover:text-violet-300 transition-colors">
                       <IconComponent className="w-5 h-5" />
                     </div>
-                    <span className="inline-flex items-center space-x-1 text-[10px] font-mono font-medium text-violet-300 bg-violet-500/15 border border-violet-500/30 px-2 py-0.5 rounded-full">
-                      <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse"></span>
-                      <span>Practicing</span>
-                    </span>
+                    {item.tag && (
+                      <span className="text-[10px] font-mono font-medium text-violet-300 bg-violet-500/15 border border-violet-500/30 px-2 py-0.5 rounded-full">
+                        {item.tag}
+                      </span>
+                    )}
                   </div>
 
                   {/* Title & Description */}
@@ -80,7 +81,7 @@ export default function CurrentlyPracticing() {
                 {/* Card Footer */}
                 <div className="mt-5 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500">
                   <span className="font-mono">Module #{index + 1}</span>
-                  <span className="text-slate-400 group-hover:text-sky-400 transition-colors">Hands-on Lab</span>
+                  <span className="text-slate-400 group-hover:text-sky-400 transition-colors font-medium">Active Practice</span>
                 </div>
               </div>
             );

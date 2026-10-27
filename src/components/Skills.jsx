@@ -5,7 +5,9 @@ import {
   Database, 
   Wrench, 
   Terminal, 
-  Layers
+  Layers,
+  Sparkles,
+  CheckCircle2
 } from 'lucide-react';
 import { skillsData } from '../data/portfolioData';
 
@@ -86,20 +88,27 @@ export default function Skills() {
 
                 <div className="space-y-3">
                   {skillsData.frontend.map((skill) => (
-                    <div key={skill.name} className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-                      <div className="flex items-center space-x-2.5">
-                        <span className={`w-2 h-2 rounded-full ${skill.highlight ? 'bg-sky-400 ring-2 ring-sky-400/20' : 'bg-slate-500'}`} />
-                        <span className="text-xs sm:text-sm font-semibold text-slate-200">{skill.name}</span>
+                    <div key={skill.name} className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2.5">
+                          <span className={`w-2 h-2 rounded-full ${skill.highlight ? 'bg-sky-400 ring-2 ring-sky-400/20' : 'bg-slate-500'}`} />
+                          <span className="text-xs sm:text-sm font-semibold text-slate-200">{skill.name}</span>
+                        </div>
+                        <span className="text-[10px] font-medium text-sky-300 px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20">
+                          {skill.level}
+                        </span>
                       </div>
-                      <span className="text-[11px] font-medium text-slate-400 px-2 py-0.5 rounded bg-slate-900">
-                        {skill.level}
-                      </span>
+                      {skill.detail && (
+                        <p className="text-[11px] text-slate-400 mt-1 pl-4">
+                          {skill.detail}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="mt-4 text-[11px] text-slate-500">
+              <p className="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500">
                 Applied in responsive e-commerce web pages & interactive React SPAs.
               </p>
             </div>
@@ -126,20 +135,27 @@ export default function Skills() {
 
                 <div className="space-y-3">
                   {skillsData.backend.map((skill) => (
-                    <div key={skill.name} className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-                      <div className="flex items-center space-x-2.5">
-                        <span className={`w-2 h-2 rounded-full ${skill.highlight ? 'bg-indigo-400 ring-2 ring-indigo-400/20' : 'bg-slate-500'}`} />
-                        <span className="text-xs sm:text-sm font-semibold text-slate-200">{skill.name}</span>
+                    <div key={skill.name} className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2.5">
+                          <span className={`w-2 h-2 rounded-full ${skill.highlight ? 'bg-indigo-400 ring-2 ring-indigo-400/20' : 'bg-slate-500'}`} />
+                          <span className="text-xs sm:text-sm font-semibold text-slate-200">{skill.name}</span>
+                        </div>
+                        <span className="text-[10px] font-medium text-indigo-300 px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20">
+                          {skill.level}
+                        </span>
                       </div>
-                      <span className="text-[11px] font-medium text-slate-400 px-2 py-0.5 rounded bg-slate-900">
-                        {skill.level}
-                      </span>
+                      {skill.detail && (
+                        <p className="text-[11px] text-slate-400 mt-1 pl-4">
+                          {skill.detail}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="mt-4 text-[11px] text-slate-500">
+              <p className="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500">
                 Practiced building Node/Express servers, endpoint routing & CRUD handlers.
               </p>
             </div>
@@ -166,25 +182,23 @@ export default function Skills() {
 
                 <div className="space-y-3">
                   {skillsData.databaseAndIntegration.map((item) => (
-                    <div key={item.name} className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+                    <div key={item.name} className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
                       <div className="flex items-center justify-between">
                         <span className="text-xs sm:text-sm font-semibold text-slate-200">{item.name}</span>
-                        <span className="text-[11px] font-medium text-slate-400 px-2 py-0.5 rounded bg-slate-900">
+                        <span className="text-[10px] font-medium text-emerald-300 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">
                           {item.level}
                         </span>
                       </div>
-                      {item.note && (
-                        <p className="text-[11px] text-slate-400 mt-1 font-mono">
-                          &bull; {item.note}
-                        </p>
-                      )}
+                      <p className="text-[11px] text-slate-400 mt-1">
+                        {item.detail || item.note}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="mt-4 text-[11px] text-slate-500">
-                MongoDB basic collections and Axios asynchronous API workflows.
+              <p className="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500">
+                MongoDB collections, Mongoose models, and Axios asynchronous workflows.
               </p>
             </div>
           )}
@@ -208,17 +222,22 @@ export default function Skills() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-3">
                   {skillsData.tools.map((tool) => (
                     <div key={tool.name} className="p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-                      <span className="text-xs sm:text-sm font-semibold text-white block">{tool.name}</span>
-                      <span className="text-[10px] text-slate-400 block mt-0.5">{tool.category}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs sm:text-sm font-semibold text-white">{tool.name}</span>
+                        <span className="text-[10px] text-slate-400 bg-slate-900 px-2 py-0.5 rounded">{tool.category}</span>
+                      </div>
+                      <p className="text-[11px] text-slate-400 mt-1">
+                        {tool.detail}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="mt-4 text-[11px] text-slate-500">
+              <p className="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500">
                 Git version control used during internship & personal projects.
               </p>
             </div>
@@ -248,19 +267,19 @@ export default function Skills() {
                     <div key={lang.name} className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-semibold text-white">{lang.name}</span>
-                        <span className="text-[11px] text-amber-300/90 font-mono bg-amber-500/10 px-2 py-0.5 rounded">
+                        <span className="text-[11px] text-amber-300 font-mono bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
                           {lang.level}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 mt-1">
-                        Core syntax, algorithmic reasoning, and object-oriented concepts from diploma studies.
+                      <p className="text-xs text-slate-400 mt-1.5">
+                        {lang.detail}
                       </p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="mt-4 text-[11px] text-slate-500">
+              <p className="mt-4 pt-3 border-t border-white/5 text-[11px] text-slate-500">
                 Provides a broad multi-language foundation that speeds up grasping new frameworks and backend patterns.
               </p>
             </div>

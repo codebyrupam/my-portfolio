@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, CheckCircle2, GitBranch, Shield } from 'lucide-react';
+import { Briefcase, CheckCircle2, GitBranch, Shield, Code2, Sparkles } from 'lucide-react';
 import { experienceData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -88,7 +88,7 @@ export default function Experience() {
                   ))}
                 </div>
 
-                <div className="flex items-center space-x-1.5 text-xs text-slate-400">
+                <div className="flex items-center space-x-1.5 text-xs text-slate-400 font-mono">
                   <GitBranch className="w-3.5 h-3.5 text-sky-400" />
                   <span>GitHub Version Control</span>
                 </div>
