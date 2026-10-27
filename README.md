@@ -20,6 +20,9 @@ npm run build
 
 # 4. Preview production build locally
 npm run preview
+
+# 5. Run automated browser test suite (real browser automation)
+npm run test:browser
 ```
 
 The Vite dev server will start at `http://localhost:3000` or `http://localhost:5173`.
@@ -47,9 +50,11 @@ rupam-ghosh-portfolio/
 │   │   └── ResumeModal.jsx        <-- CV download trigger & instructions modal
 │   ├── data/
 │   │   └── portfolioData.js       <-- ⭐ Central configuration file for all content & links
-│   ├── App.jsx                    <-- Main container component
+│   ├── App.jsx                    <-- Main container component with skip-to-content link
 │   ├── main.jsx                   <-- React entry point
 │   └── index.css                  <-- Tailwind directives, custom glassmorphism & gradients
+├── tests/
+│   └── browserTest.js             <-- Real browser automation test suite
 ├── index.html                     <-- SEO meta tags, title & fonts
 ├── tailwind.config.js             <-- Dark theme color palette & extensions
 ├── vite.config.js                 <-- Vite build configuration
@@ -95,9 +100,8 @@ To update the repository or demo link for any project:
 ### Deploy to Vercel (Recommended — Free & Fast)
 1. Push this project to your GitHub repository:
    ```bash
-   git init
    git add .
-   git commit -m "Initial commit - Rupam Ghosh Portfolio"
+   git commit -m "feat: complete portfolio with automated browser test suite"
    git remote add origin https://github.com/codebyrupam/portfolio.git
    git push -u origin main
    ```
