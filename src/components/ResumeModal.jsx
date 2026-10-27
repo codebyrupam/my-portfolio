@@ -21,15 +21,6 @@ export default function ResumeModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = personalInfo.resumePath;
-    link.download = `${personalInfo.name.replace(/\s+/g, '_')}_CV.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <div 
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
@@ -104,13 +95,14 @@ export default function ResumeModal({ isOpen, onClose }) {
 
         {/* Footer Actions */}
         <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
-          <button
-            onClick={handleDownload}
+          <a
+            href={personalInfo.resumePath}
+            download={`${personalInfo.name.replace(/\s+/g, '_')}_CV.pdf`}
             className="flex-1 inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-medium shadow-lg shadow-sky-500/20 transition-all transform active:scale-95 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
           >
             <Download className="w-4 h-4" />
             <span>Download CV (resume.pdf)</span>
-          </button>
+          </a>
           <a
             href={`mailto:${personalInfo.email}?subject=Interview%20Opportunity%20-%20Fresher%20MERN%20Developer`}
             className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 transition-colors focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"

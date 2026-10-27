@@ -262,7 +262,13 @@ async function runBrowserTests() {
     }
 
     // Open project detail modal
-    const detailBtn = await page.$('#projects button[title*="deployment"]');
+    let detailBtn = await page.$('#projects button[title*="architecture"]');
+    if (!detailBtn) {
+      detailBtn = await page.$('#projects button[title*="deployment"]');
+    }
+    if (!detailBtn) {
+      detailBtn = await page.$('#projects button:has-text("Full Details")');
+    }
     if (detailBtn) {
       await detailBtn.click();
       await new Promise((r) => setTimeout(r, 400));
