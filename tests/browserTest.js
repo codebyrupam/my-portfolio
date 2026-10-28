@@ -46,7 +46,7 @@ async function runBrowserTests() {
   };
 
   try {
-    const browserPath = fs.existsSync(EDGE_PATH) ? EDGE_PATH : CHROME_PATH;
+    const browserPath = fs.existsSync(CHROME_PATH) ? CHROME_PATH : EDGE_PATH;
     console.log(`Launching real browser executable from: ${browserPath}`);
     browser = await puppeteer.launch({
       executablePath: browserPath,
@@ -58,7 +58,9 @@ async function runBrowserTests() {
         '--disable-gpu',
         '--disable-dev-shm-usage',
         '--no-first-run',
-        '--no-default-browser-check'
+        '--no-default-browser-check',
+        '--disable-extensions',
+        '--disable-component-extensions-with-background-pages'
       ]
     });
 
@@ -80,9 +82,15 @@ async function runBrowserTests() {
     page.on('requestfailed', (req) => {
       const url = req.url();
       const failure = req.failure()?.errorText || 'unknown failure';
-      if (!url.startsWith('mailto:') && !url.startsWith('tel:')) {
+      // Track requests belonging to the application under test or its assets
+      const isAppRequest = url.startsWith(SERVER_URL) || 
+                           url.startsWith('http://localhost') || 
+                           url.startsWith('http://127.0.0.1') || 
+                           url.includes('fonts.googleapis') || 
+                           url.includes('fonts.gstatic');
+      if (isAppRequest) {
         results.failedRequests.push({ url, failure });
-        console.error(`[REQUEST FAILED] ${url}: ${failure}`);
+        console.error(`[APPLICATION REQUEST FAILED] ${url}: ${failure}`);
       }
     });
 
