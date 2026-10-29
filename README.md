@@ -252,7 +252,7 @@ I am open to suitable fresher opportunities, internships, and collaborations in 
 - 🌐 **Portfolio:** [Visit Website](https://my-portfolio-sigma-one-k8ehr1xzlo.vercel.app/)
 - 💻 **GitHub:** [codebyrupam](https://github.com/codebyrupam)
 - 💼 **LinkedIn:** [Rupam Ghosh](https://linkedin.com/in/rupam-ghosh-7293a5279)
-- 📧 **Email:** Add your professional email address here.
+- 📧 **Email:** rupamghosh175@gmail.com
 
 ---
 
