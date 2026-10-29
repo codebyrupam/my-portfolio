@@ -2,7 +2,7 @@
 
 A modern, responsive, and performance-focused developer portfolio built with **React.js, Vite, and Tailwind CSS**. Designed to showcase my technical skills, projects, internship experience, and educational background to recruiters and potential employers.
 
-🌐 **Live Portfolio:** https://my-portfolio-sigma-one-k8ehr1xzlo.vercel.app/
+🌐 **Live Portfolio:** https://my-portfolio-sigma-one-k8ehr1xzlo.vercel.app
 💼 **LinkedIn:** [Rupam Ghosh](https://linkedin.com/in/rupam-ghosh-7293a5279)  
 💻 **GitHub:** [codebyrupam](https://github.com/codebyrupam)  
 📍 **Location:** Kolkata, West Bengal, India
